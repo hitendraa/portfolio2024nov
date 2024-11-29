@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const sections = document.querySelectorAll('section');
     
-    sections.forEach((section, i) => {
+    sections.forEach((section) => {
       ScrollTrigger.create({
         trigger: section,
         start: "top center",

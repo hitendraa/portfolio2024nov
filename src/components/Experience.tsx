@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -118,37 +117,37 @@ export function Experience() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 experience-cards">
-          {experiences.map((exp, idx) => (
+          {experiences.map((experience) => (
             <div
-              key={exp.title}
+              key={experience.title}
               className="experience-card group"
             >
               <div className="relative p-6 rounded-2xl bg-gradient-to-b from-gray-900 to-black border border-gray-800 h-full
                             hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-2">
                 {/* Hover gradient */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500">
-                  <div className={`absolute inset-0 bg-gradient-to-r ${exp.gradient} blur-xl`} />
+                  <div className={`absolute inset-0 bg-gradient-to-r ${experience.gradient} blur-xl`} />
                 </div>
 
                 <div className="relative z-10">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${exp.gradient}`} />
-                    <h3 className="text-xl font-bold text-white">{exp.title}</h3>
+                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${experience.gradient}`} />
+                    <h3 className="text-xl font-bold text-white">{experience.title}</h3>
                   </div>
                   
                   <div className="mb-4">
-                    <div className="text-purple-400 font-medium">{exp.company}</div>
+                    <div className="text-purple-400 font-medium">{experience.company}</div>
                     <div className="text-gray-500 text-sm flex items-center gap-2">
-                      <span>{exp.location}</span>
+                      <span>{experience.location}</span>
                       <span>•</span>
-                      <span>{exp.period}</span>
+                      <span>{experience.period}</span>
                     </div>
                   </div>
 
-                  <p className="text-gray-400 mb-4">{exp.description}</p>
+                  <p className="text-gray-400 mb-4">{experience.description}</p>
 
                   <div className="flex flex-wrap gap-2 mt-4">
-                    {exp.skills.map((skill) => (
+                    {experience.skills.map((skill) => (
                       <span
                         key={skill}
                         className="skill-tag px-3 py-1 text-sm rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20

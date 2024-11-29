@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaPlay } from "react-icons/fa";
 import { projects } from "@/data/projects";
-import { Project, ProjectCardProps } from "@/types";
+import { ProjectCardProps } from "@/types";
 
 gsap.registerPlugin(ScrollTrigger);
 

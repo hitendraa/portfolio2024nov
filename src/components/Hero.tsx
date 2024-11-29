@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
+import Image from 'next/image';
 import { FaGithub, FaLinkedinIn, FaReact, FaPython } from 'react-icons/fa';
 import { TbBrandNextjs } from 'react-icons/tb';
 
@@ -96,9 +97,11 @@ export default function Hero() {
           {/* Main profile image with gradient border */}
           <div className="relative w-full h-full rounded-full p-2 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 animate-border-pulse">
             <div className="relative w-full h-full rounded-full overflow-hidden bg-black/50 backdrop-blur-sm">
-              <img
+              <Image
                 src="/profile.jpeg"
                 alt="Hitendra Singh Choudhary"
+                width={288}
+                height={288}
                 className="w-full h-full object-cover rounded-full hover:scale-110 transition-transform duration-500"
               />
             </div>
