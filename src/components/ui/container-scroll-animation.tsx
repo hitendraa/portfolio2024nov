@@ -32,7 +32,7 @@ export const ContainerScroll = ({
 
   const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const translateY = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   return (
     <div
@@ -45,8 +45,8 @@ export const ContainerScroll = ({
           perspective: "1000px",
         }}
       >
-        <Header translate={translate} titleComponent={titleComponent} />
-        <Card rotate={rotate} translate={translate} scale={scale}>
+        <Header translateY={translateY} titleComponent={titleComponent} />
+        <Card rotate={rotate} translateY={translateY} scale={scale}>
           {children}
         </Card>
       </div>
@@ -55,16 +55,16 @@ export const ContainerScroll = ({
 };
 
 export const Header = ({
-  translate,
+  translateY,
   titleComponent,
 }: {
-  translate: MotionValue<number>;
+  translateY: MotionValue<number>;
   titleComponent: string | React.ReactNode;
 }) => {
   return (
     <motion.div
       style={{
-        translateY: translate,
+        translateY: translateY,
       }}
       className="div max-w-5xl mx-auto text-center"
     >
@@ -76,12 +76,12 @@ export const Header = ({
 export const Card = ({
   rotate,
   scale,
-  translate,
+  translateY,
   children,
 }: {
   rotate: MotionValue<number>;
   scale: MotionValue<number>;
-  translate: MotionValue<number>;
+  translateY: MotionValue<number>;
   children: React.ReactNode;
 }) => {
   return (
@@ -89,7 +89,7 @@ export const Card = ({
       style={{
         rotateX: rotate,
         scale: scale,
-        translateY: translate,
+        translateY,
       }}
       className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
     >
